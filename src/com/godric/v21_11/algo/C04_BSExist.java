@@ -32,8 +32,8 @@ public class C04_BSExist {
     }
 
     public static boolean test(int[] arr, int target) {
-        for (int i=0; i<arr.length; i++) {
-            if (arr[i] == target) {
+        for (int i : arr) {
+            if (i == target) {
                 return true;
             }
         }
