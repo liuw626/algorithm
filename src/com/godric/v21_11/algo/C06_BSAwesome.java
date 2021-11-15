@@ -1,26 +1,26 @@
 package com.godric.v21_11.algo;
 
 /**
- * 在一个先递减后递增的数组中找到极小值点
- * todo 确定题意
+ * 局部最小值问题: 在一个先递减后递增的数组中找到极小值点
  */
 public class C06_BSAwesome {
 
     public static int getLessIndex(int[] arr) {
-        int left = 0;
-        int right = arr.length - 1;
+        int left = 1;
+        int right = arr.length - 2;
 
-        int ans = -1;
-        while (left <= right) {
+        while (left < right) {
             int mid = left + ((right - left) >> 1);
             if (mid == 0 || arr[mid] < arr[mid - 1]) {
                 left = mid + 1;
             } else if (arr[mid] > arr[mid - 1]) {
                 right = mid - 1;
+            } else {
+                return mid;
             }
         }
 
-        return -1;
+        return left;
     }
 
 }
