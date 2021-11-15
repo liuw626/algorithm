@@ -2,6 +2,8 @@ package com.godric.v21_11.algo;
 
 /**
  * 局部最小值问题: 在一个先递减后递增的数组中找到极小值点
+ *
+ * todo ??????
  */
 public class C07_BSAwesome {
 
@@ -11,16 +13,21 @@ public class C07_BSAwesome {
 
         while (left < right) {
             int mid = left + ((right - left) >> 1);
-            if (mid == 0 || arr[mid] < arr[mid - 1]) {
-                left = mid + 1;
-            } else if (arr[mid] > arr[mid - 1]) {
+            if (arr[mid] > arr[mid - 1]) {
                 right = mid - 1;
+            } else if (arr[mid] > arr[mid + 1]) {
+                left = mid + 1;
             } else {
                 return mid;
             }
         }
 
         return left;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {9, 8, 7, 6, 5, 6, 7, 8, 9};
+        System.out.println(arr[getLessIndex(arr)]);
     }
 
 }
