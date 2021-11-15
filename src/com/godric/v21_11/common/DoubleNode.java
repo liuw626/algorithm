@@ -8,4 +8,8 @@ public class DoubleNode {
 
     public DoubleNode next;
 
+    public DoubleNode(int val) {
+        this.val = val;
+    }
+
 }
