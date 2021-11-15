@@ -2,12 +2,19 @@ package com.godric.v21_11.algo;
 
 /**
  * 局部最小值问题: 在一个先递减后递增的数组中找到极小值点
- *
- * todo ??????
  */
 public class C07_BSAwesome {
 
     public static int getLessIndex(int[] arr) {
+
+        if (arr == null || arr.length < 1) {
+            return -1;
+        }
+
+        if (arr.length == 1 || arr[0] < arr[1]) {
+            return 0;
+        }
+
         int left = 1;
         int right = arr.length - 2;
 
