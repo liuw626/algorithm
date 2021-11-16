@@ -2,6 +2,9 @@ package com.godric.v21_11.algo;
 
 import com.godric.v21_11.utils.ArrayUtil;
 
+import java.util.Arrays;
+import java.util.OptionalInt;
+
 /**
  * 使用递归获取数组中的最大值
  */
@@ -24,16 +27,7 @@ public class C17_GetMaxByRecursive {
     }
 
     public static int getMaxForTest(int[] arr) {
-        if (arr == null || arr.length < 1) {
-            return Integer.MIN_VALUE;
-        }
-        int max = arr[0];
-        for (int i=1; i<arr.length; i++) {
-            if (arr[i] > max) {
-                max = arr[i];
-            }
-        }
-        return max;
+        return Arrays.stream(arr).max().orElse(Integer.MIN_VALUE);
     }
 
     public static void main(String[] args) {
