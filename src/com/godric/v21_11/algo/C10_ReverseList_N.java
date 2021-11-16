@@ -3,13 +3,12 @@ package com.godric.v21_11.algo;
 import com.godric.v21_11.common.Node;
 import com.godric.v21_11.utils.LinkedListUtil;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
  * 反转链表: 单链表 & 双链表
  */
-public class C10_ReverseList {
+public class C10_ReverseList_N {
 
     public static Node reverseLinkedListByRecursive(Node head) {
         if (head == null || head.next == null) {
