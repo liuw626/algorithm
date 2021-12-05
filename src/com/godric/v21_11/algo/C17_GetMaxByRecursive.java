@@ -3,7 +3,6 @@ package com.godric.v21_11.algo;
 import com.godric.v21_11.utils.ArrayUtil;
 
 import java.util.Arrays;
-import java.util.OptionalInt;
 
 /**
  * 使用递归获取数组中的最大值
